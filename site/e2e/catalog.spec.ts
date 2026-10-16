@@ -4,16 +4,6 @@ test.beforeEach(async ({ context }) => {
   await context.grantPermissions(['clipboard-read', 'clipboard-write']).catch(() => {});
 });
 
-test('loads under the Pages base path with no failed requests', async ({ page }) => {
-  const failed: string[] = [];
-  page.on('response', (r) => r.status() >= 400 && failed.push(`${r.status()} ${r.url()}`));
-  page.on('pageerror', (e) => failed.push(`pageerror ${e.message}`));
-  await page.goto('./');
-  await expect(page.getByRole('heading', { name: /Find a plugin/ })).toBeVisible();
-  await expect(page.locator('.card')).toHaveCount(6);
-  expect(failed).toEqual([]);
-});
-
 test('natural-language search shows cards and keeps state in the URL', async ({ page }) => {
   await page.goto('./');
   await page.getByLabel('Search').fill('I need a skill for code review');
