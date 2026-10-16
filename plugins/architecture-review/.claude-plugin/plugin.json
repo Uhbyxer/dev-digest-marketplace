@@ -1,0 +1,14 @@
+{
+  "name": "architecture-review",
+  "version": "1.0.0",
+  "description": "Read-only architecture-reviewer agent that checks dependency boundaries",
+  "author": {
+    "name": "Uhbyxer"
+  },
+  "dependencies": [
+    {
+      "name": "engineering-paved-path",
+      "version": "^1.0.0"
+    }
+  ]
+}

@@ -14,6 +14,10 @@ Claude Code plugin marketplace for Dev Digest AI.
 | Plugin | Description |
 | :- | :- |
 | `example-plugin` | Placeholder plugin with one skill |
+| `engineering-paved-path` | Shared skills: React, Next.js, Fastify, architecture, testing, security |
+| `research-tools` | Read-only `researcher` agent |
+| `architecture-review` | Read-only `architecture-reviewer` agent |
+| `sdd-engineering` | Spec Driven Development workflow (depends on the three above) |
 
 ## Catalog site
 

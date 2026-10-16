@@ -1,0 +1,11 @@
+{
+  "name": "sdd-engineering",
+  "version": "1.0.0",
+  "description": "Spec Driven Development workflow: spec-creator, implementation-planner, implementer, plan-verifier and run-plan",
+  "author": { "name": "Uhbyxer" },
+  "dependencies": [
+    { "name": "engineering-paved-path", "version": "^1.0.0" },
+    { "name": "research-tools", "version": "^1.0.0" },
+    { "name": "architecture-review", "version": "^1.0.0" }
+  ]
+}
