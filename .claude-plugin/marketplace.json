@@ -10,6 +10,30 @@
       "source": "./plugins/example-plugin",
       "description": "Placeholder plugin with one skill; replace or remove it",
       "category": "example"
+    },
+    {
+      "name": "engineering-paved-path",
+      "source": "./plugins/engineering-paved-path",
+      "description": "Shared engineering skills: React, Next.js, Fastify, architecture, testing and security",
+      "category": "engineering"
+    },
+    {
+      "name": "research-tools",
+      "source": "./plugins/research-tools",
+      "description": "Read-only researcher agent",
+      "category": "engineering"
+    },
+    {
+      "name": "architecture-review",
+      "source": "./plugins/architecture-review",
+      "description": "Read-only architecture-reviewer agent",
+      "category": "engineering"
+    },
+    {
+      "name": "sdd-engineering",
+      "source": "./plugins/sdd-engineering",
+      "description": "Spec Driven Development: spec-creator, implementation-planner, implementer, plan-verifier, run-plan",
+      "category": "engineering"
     }
   ]
 }
