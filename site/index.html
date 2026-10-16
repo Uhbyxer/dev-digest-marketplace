@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dev Digest Marketplace</title>
+    <meta name="description" content="Search plugins, skills, agents, commands, hooks and MCP servers in the dev-digest Claude Code marketplace." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='4' y='4' width='8' height='8' fill='%233b4fd6' transform='rotate(45 8 8)'/%3E%3C/svg%3E" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This catalog needs JavaScript. Browse the repository on GitHub instead.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
