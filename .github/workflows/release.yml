@@ -4,9 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       plugin:
-        description: Plugin directory name under plugins/ (e.g. sdd-engineering)
+        description: Plugin to release (keep in sync with plugins/)
         required: true
-        type: string
+        type: choice
+        options:
+          - architecture-review
+          - engineering-paved-path
+          - example-plugin
+          - research-tools
+          - sdd-engineering
       bump:
         description: Version bump
         required: true
