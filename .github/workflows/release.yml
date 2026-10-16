@@ -1,0 +1,62 @@
+name: Release plugin
+
+on:
+  workflow_dispatch:
+    inputs:
+      plugin:
+        description: Plugin to release (keep in sync with plugins/)
+        required: true
+        type: choice
+        options:
+          - architecture-review
+          - engineering-paved-path
+          - example-plugin
+          - research-tools
+          - sdd-engineering
+      bump:
+        description: Version bump
+        required: true
+        type: choice
+        options: [patch, minor, major]
+        default: minor
+      dry_run:
+        description: Only print the planned version, change nothing
+        type: boolean
+        default: false
+
+# Releases are serialized so two runs cannot race on main.
+concurrency: release
+
+permissions:
+  contents: write
+  actions: write # to start the catalog deploy after the tag push
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # tags are needed to detect an existing release tag
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Release
+        env:
+          PLUGIN: ${{ inputs.plugin }}
+          BUMP: ${{ inputs.bump }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          args=()
+          if [[ "$DRY_RUN" == "true" ]]; then args+=(--dry-run); else args+=(--push); fi
+          ./scripts/release.sh "$PLUGIN" "$BUMP" "${args[@]}"
+      - name: Refresh catalog site
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        # Pushes made with GITHUB_TOKEN do not trigger other workflows.
+        run: gh workflow run pages.yml --ref main
