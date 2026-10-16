@@ -15,6 +15,11 @@ Claude Code plugin marketplace for Dev Digest AI.
 | :- | :- |
 | `example-plugin` | Placeholder plugin with one skill |
 
+## Catalog site
+
+Search every plugin, skill, agent, command, hook and MCP server at
+<https://uhbyxer.github.io/dev-digest-marketplace/>. The site source is in [`site/`](site/README.md).
+
 ## Development
 
 ```bash
@@ -23,5 +28,7 @@ claude plugin marketplace add .             # try it locally
 ./scripts/release.sh <plugin> patch         # cut a release
 ./scripts/rollback.sh <plugin> <version>    # roll back to a good release
 ```
+
+The catalog UI is developed separately in [site/](site/README.md).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [docs/PLUGIN-GUIDELINES.md](docs/PLUGIN-GUIDELINES.md), [docs/RELEASES.md](docs/RELEASES.md), [docs/SECURITY.md](docs/SECURITY.md).

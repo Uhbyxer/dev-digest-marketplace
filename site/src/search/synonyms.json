@@ -1,0 +1,9 @@
+[
+  ["review", "code review", "pr review", "audit"],
+  ["test", "testing", "unit test", "tests"],
+  ["docs", "documentation", "readme"],
+  ["commit", "git"],
+  ["sql", "database", "postgres"],
+  ["refactor", "cleanup", "restructure"],
+  ["security", "secrets", "vulnerability"]
+]
