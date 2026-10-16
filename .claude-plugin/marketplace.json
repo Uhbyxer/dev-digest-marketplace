@@ -1,0 +1,15 @@
+{
+  "name": "dev-digest-marketplace",
+  "description": "Dev Digest AI plugins for Claude Code",
+  "owner": {
+    "name": "Uhbyxer"
+  },
+  "plugins": [
+    {
+      "name": "example-plugin",
+      "source": "./plugins/example-plugin",
+      "description": "Placeholder plugin with one skill; replace or remove it",
+      "category": "example"
+    }
+  ]
+}
