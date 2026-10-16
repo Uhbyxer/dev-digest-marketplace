@@ -29,6 +29,7 @@ The three dependencies below are installed automatically.
 | `implementer` | agent | Executes the plan step by step with targeted tests |
 | `plan-verifier` | agent | Marks each plan step DONE / PARTIAL / NOT FOUND / DIVERGED |
 | `run-plan` | skill | Orchestrates implementer, then plan-verifier and architecture-reviewer in parallel |
+| `about-digest` | skill | Explains the workflow and which piece to use when |
 | `researcher`, `architecture-reviewer` | agents (dependencies) | Research and boundary review |
 
 ## Workflow

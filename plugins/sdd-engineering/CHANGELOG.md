@@ -2,6 +2,10 @@
 
 All notable changes to `sdd-engineering` are documented here. Format: [Keep a Changelog](https://keepachangelog.com/), versioning: semver.
 
+## [Unreleased]
+
+- Add `about-digest` skill explaining the workflow and which piece to use when.
+
 ## [1.0.0]
 
 - Initial release: agents `spec-creator`, `implementation-planner`, `implementer`, `plan-verifier`; skill `run-plan`.
